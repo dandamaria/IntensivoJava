@@ -4,17 +4,18 @@ import java.io.File;
 import java.io.IOException;
 
 public class ExceptionTest {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException{
         criarNovoArquivo();
     }
 
-    private static void criarNovoArquivo(){
+    private static void criarNovoArquivo() throws IOException{
         File file = new File("arquivo\\teste.txt");
         try{
             boolean isCriado = file.createNewFile();
             System.out.println("arquivo criado " + isCriado);
         }catch (IOException e){
             e.printStackTrace();
+            throw e;
         }
     }
 }
