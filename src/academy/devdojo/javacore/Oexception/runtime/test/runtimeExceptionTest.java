@@ -1,6 +1,6 @@
 package academy.devdojo.javacore.Oexception.runtime.test;
 
-public class runtimeExceptionTest {
+public class RuntimeExceptionTest {
     public static void main(String[] args) {
         // Checked e Unchecked
         Object object = null;

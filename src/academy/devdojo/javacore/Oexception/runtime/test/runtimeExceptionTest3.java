@@ -1,6 +1,6 @@
 package academy.devdojo.javacore.Oexception.runtime.test;
 
-public class runtimeExceptionTest3 {
+public class RuntimeExceptionTest3 {
     public static void main(String[] args) {
         abreConexao();
     }
