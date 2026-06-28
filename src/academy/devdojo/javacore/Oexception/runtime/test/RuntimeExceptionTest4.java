@@ -17,12 +17,28 @@ public class RuntimeExceptionTest4 {
         try {
             talvezLanceException();
         }catch (SQLException | FileNotFoundException e){
-            e.printStackTrace();
+            //isso só pode ser feito porque essas Exceptions não tão na mesma linha de herança
         }
+
+        //um exemplo onde as tem exceções na mesma linha de herança:
+        try{
+            talvezLanceException2();
+        } catch (SQLException | IndexOutOfBoundsException e) {
+            throw new RuntimeException(e);
+        }/* catch (ArrayIndexOutOfBoundsException e) {
+            throw new RuntimeException(e);
+            //ISSO AQUI NÃO FUNCIONA porque ArrayIndexOut.. faz parte de IndexOutOfBounds..
+        }*/
 
     }
 
     private static void talvezLanceException() throws SQLException, FileNotFoundException{
 
     }
+
+    private static void talvezLanceException2() throws ArrayIndexOutOfBoundsException, IndexOutOfBoundsException, SQLException{
+
+    }
+
+
 }

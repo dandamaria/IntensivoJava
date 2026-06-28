@@ -10,10 +10,11 @@ public class TryWithResoursesTest {
         lerArquivo1();
     }
 
+    //Como o lerArquivo2 é FEIO, criou-se o try-with-resources:
+    //Quuando se trabalha com try-with-resources pode criar só o try - sem o catch - mas precisaria incluir um 'throws' no nome da classe
     public static void lerArquivo1(){
         try(Leitor1 leitor1 = new Leitor1();
             Leitor2 leitor2 = new Leitor2()){
-
         } catch (IOException e) {
 
         }
@@ -23,9 +24,11 @@ public class TryWithResoursesTest {
         Reader reader = null;
         try {
             reader = new BufferedReader(new FileReader("teste.txt"));
+            //o reader tem um metodo close que vai lá pro finally
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         } finally {
+            //o close() também pode lançar uma exception do tipo NullPointerExeception porque o reader poderia ser "null"
             try {
                 if (reader != null) {
                     reader.close();
