@@ -2,6 +2,7 @@ package academy.devdojo.javacore.Rdates.test;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.time.temporal.ChronoUnit;
 
 public class PeriodTest {
     public static void main(String[] args) {
@@ -14,6 +15,7 @@ public class PeriodTest {
         System.out.println(Period.ofMonths(4));
 
         Period p3 = Period.ofWeeks(60);
+        System.out.println(now.until(now.plusDays(p3.getDays()), ChronoUnit.DAYS));
 
     }
 }
